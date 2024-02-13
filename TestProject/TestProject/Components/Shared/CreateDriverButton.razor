@@ -1,0 +1,11 @@
+﻿@inject NavigationManager NavigationManager
+
+
+<button @onclick="CreateDrivers" class="btn btn-primary">Create Driver</button>
+
+@code {
+    void CreateDrivers()
+    {
+        NavigationManager.NavigateTo("/EditDrivers");
+    }
+}

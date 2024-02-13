@@ -1,0 +1,13 @@
+﻿@inject NavigationManager NavigationManager
+
+
+<button @onclick="EditDrviers" class="btn btn-primary">Edit Driver</button>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+    void EditDrviers()
+    {
+        NavigationManager.NavigateTo($"/EditDrivers/{Id}");
+    }
+}

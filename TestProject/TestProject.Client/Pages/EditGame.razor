@@ -1,0 +1,54 @@
+﻿@page "/EditDrivers"
+@page "/EditDrivers/{id:int}"
+
+@inject IDriverServices DriverService
+@attribute [StreamRendering(true)]
+@if (Id==null)
+{
+    <h3>Create Driver</h3>
+}
+else
+{
+    <h3>Edit Driver.FullName</h3>
+}
+
+
+<EditForm Model="driver" OnSubmit="HandleSubmit" FormName="EditDrivers">
+    <label>Name</label>
+    <InputText @bind-Value="driver.FullName">@driver.FullName</InputText>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        @if (Id!=null)
+    {
+        <button @onclick ="DeleteDriver"  type="button" class="btn btn-danger">Delete</button>
+    }
+    </EditForm>
+
+    @code {
+    [Parameter]
+    public int? Id { get; set; }
+    [SupplyParameterFromForm]
+    Driver driver { get; set; } = new Driver { FullName = string.Empty };
+
+    protected override async Task OnParametersSetAsync()
+    {
+        driver =await DriverService.GetDriverById((int)Id);
+
+    }
+    async Task HandleSubmit()
+    {
+        if (Id == null)
+        {
+            await DriverService.AddDriver(driver);
+        }
+         else
+            {
+            await DriverService.EditDriver((int)Id, driver);
+        }
+
+        }
+        async Task DeleteDriver ()
+        {
+        await DriverService.DeleteDriver((int)Id);
+        }
+    }
+}
