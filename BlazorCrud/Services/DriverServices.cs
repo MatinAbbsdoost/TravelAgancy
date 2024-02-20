@@ -23,9 +23,9 @@ namespace TestProject.Services
 
      
 
-      public async  Task<Driver> EditDriver(int id, Driver driver)
+      public async  Task<Driver> EditDriver( Driver driver)
         {
-            var update = await _context.Drivers.FindAsync(id);
+            var update = await _context.Drivers.FindAsync();
             if (update != null)
             {
            update.FullName = driver.FullName;

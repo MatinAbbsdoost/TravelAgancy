@@ -36,10 +36,10 @@ namespace BlazorCrud.Shared.Services
             return await result.Content.ReadFromJsonAsync<Passanger>();
         }
 
-     public async Task<Passanger>EditPassnager(int id, Passanger Passnager)
+     public async Task<Passanger>EditPassnager( Passanger Passnager)
         {
             var result = await _httpClient
-                    .PutAsJsonAsync($"/api/Passnager/{id}", Passnager);
+                    .PutAsJsonAsync($"/api/Passnager/", Passnager);
             return await result.Content.ReadFromJsonAsync<Passanger>();
         }
 

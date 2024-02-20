@@ -28,9 +28,9 @@ namespace TestProject.Conrollers
             return Ok(AddedDriver);
         }
         [HttpPut]
-        public async Task<ActionResult<Driver>> EditDriver(int id , Driver driver)
+        public async Task<ActionResult<Driver>> EditDriver( Driver driver)
         {
-            var UpdateDriver = await _driverServices.EditDriver(id , driver);
+            var UpdateDriver = await _driverServices.EditDriver(driver);
             return Ok(UpdateDriver);
         }
         [HttpDelete ("{id}")]

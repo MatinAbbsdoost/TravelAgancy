@@ -32,9 +32,9 @@ namespace TestProject.Services
             return adventure;
         }
 
-       public async Task<Adventure>EditAdventure(int id, Adventure Adventure)
+       public async Task<Adventure>EditAdventure( Adventure Adventure)
         {
-            var update = await _context.Adventures.FindAsync(id);
+            var update = await _context.Adventures.FindAsync();
             if (update != null)
             {
                 update.DriverId = Adventure.DriverId;

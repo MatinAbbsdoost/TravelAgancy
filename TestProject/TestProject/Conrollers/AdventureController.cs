@@ -28,9 +28,9 @@ namespace TestProject.Conrollers
             return Ok(AddedAdventure);
         }
         [HttpPut]
-        public async Task<ActionResult<Adventure>> EditAdventure(int id , Adventure adventure)
+        public async Task<ActionResult<Adventure>> EditAdventure( Adventure adventure)
         {
-            var UpdateAdventure = await _adventureService.EditAdventure(id , adventure);
+            var UpdateAdventure = await _adventureService.EditAdventure(adventure);
             return Ok(UpdateAdventure);
         }
         [HttpDelete ("{id}")]

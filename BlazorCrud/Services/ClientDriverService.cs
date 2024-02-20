@@ -37,10 +37,10 @@ namespace BlazorCrud.Shared.Services
 
 
 
-        public async Task<Driver> EditDriver(int id, Driver driver)
+        public async Task<Driver> EditDriver( Driver driver)
         {
             var result = await _httpClient
-                    .PutAsJsonAsync($"/api/driver/{id}", driver);
+                    .PutAsJsonAsync($"/api/driver/", driver);
             return await result.Content.ReadFromJsonAsync<Driver>();
 
         }

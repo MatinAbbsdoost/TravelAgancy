@@ -35,9 +35,9 @@ namespace TestProject.Services
             return Passnager;
         }
 
-      public async  Task<Passanger>EditPassnager(int id, Passanger Passnager)
+      public async  Task<Passanger>EditPassnager( Passanger Passnager)
         {
-            var update = await _context.Passangers.FindAsync(id);
+            var update = await _context.Passangers.FindAsync();
             if (update != null)
             {
                 update.FullName = Passnager.FullName;

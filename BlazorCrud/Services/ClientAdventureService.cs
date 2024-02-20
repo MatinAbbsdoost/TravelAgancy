@@ -24,7 +24,9 @@ namespace BlazorCrud.Shared.Services
 
      public async   Task<Adventure>GetAdventureById(int id)
         {
-            throw new NotImplementedException();
+            var result = await _httpClient
+                   .GetFromJsonAsync<Adventure>($"/api/Adventure/{id}");
+            return result;
         }
 
         public async Task<Adventure> AddAdventure(Adventure adventure)
@@ -34,10 +36,10 @@ namespace BlazorCrud.Shared.Services
             return await result.Content.ReadFromJsonAsync<Adventure>();
         }
 
-     public async   Task<Adventure>EditAdventure(int id, Adventure Adventure)
+     public async   Task<Adventure>EditAdventure( Adventure Adventure)
         {
             var result = await _httpClient
-                    .PutAsJsonAsync($"/api/adventure/{id}", Adventure);
+                    .PutAsJsonAsync($"/api/adventure/", Adventure);
             return await result.Content.ReadFromJsonAsync<Adventure>();
         }
 
