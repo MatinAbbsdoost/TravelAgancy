@@ -4,8 +4,8 @@ using System.Linq;
 using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
-using TestProject.Shared.Entity;
-using TestProject.Shared.Services;
+using BlazorCrud.Shared.Entity;
+using BlazorCrud.Shared.Services;
 
 namespace BlazorCrud.Shared.Services
 {

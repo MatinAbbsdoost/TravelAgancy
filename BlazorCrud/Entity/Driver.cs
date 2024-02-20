@@ -1,4 +1,4 @@
-﻿namespace TestProject.Shared.Entity
+﻿namespace BlazorCrud.Shared.Entity
 {
     public class Driver
     {

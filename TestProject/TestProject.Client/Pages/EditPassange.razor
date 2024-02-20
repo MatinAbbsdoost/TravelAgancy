@@ -1,0 +1,54 @@
+﻿@page "/EditPassangers"
+@page "/EditPassangers/{id:int}"
+
+@inject IPassnagerServices PassangerService
+@attribute [StreamRendering(true)]
+@if (Id==null)
+{
+    <h3>Create Passanger</h3>
+}
+else
+{
+    <h3>Edit Passanger.FullName</h3>
+}
+
+
+<EditForm Model="passanger" OnSubmit="HandleSubmit" FormName="EditPassangers">
+    <label>Name</label>
+    <InputText @bind-Value="passanger.FullName">@passanger.FullName</InputText>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        @if (Id!=null)
+    {
+        <button @onclick="Deletepassanger" type="button" class="btn btn-danger">Delete</button>
+    }
+    </EditForm>
+
+    @code {
+    [Parameter]
+    public int? Id { get; set; }
+    [SupplyParameterFromForm]
+    Passanger passanger { get; set; } = new Passanger { FullName = string.Empty };
+
+    protected override async Task OnParametersSetAsync()
+    {
+        passanger = await PassangerService.GetPassnagerById((int)Id);
+
+    }
+    async Task HandleSubmit()
+    {
+        if (Id == null)
+        {
+            await PassangerService.AddPassnager(passanger);
+        }
+         else
+            {
+            await PassangerService.EditPassnager(passanger);
+        }
+
+        }
+        async Task Deletepassanger ()
+        {
+        await PassangerService.DeletePassanger((int)Id);
+        }
+    }
+}

@@ -1,6 +1,6 @@
-﻿using TestProject.Shared.Entity;
+﻿using BlazorCrud.Shared.Entity;
 
-namespace TestProject.Shared.Services
+namespace BlazorCrud.Shared.Services
 {
     public interface IDriverServices
     {

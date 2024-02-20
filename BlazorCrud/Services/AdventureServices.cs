@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TestProject.Shared.Data;
-using TestProject.Shared.Entity;
-using TestProject.Shared.Services;
+using BlazorCrud.Shared.Data;
+using BlazorCrud.Shared.Entity;
+using BlazorCrud.Shared.Services;
 
-namespace TestProject.Services
+namespace BlazorCrud.Services
 {
     public class AdventureServices : IAdventureServices
     {

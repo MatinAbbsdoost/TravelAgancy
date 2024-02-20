@@ -1,9 +1,11 @@
-﻿namespace TestProject.Shared.Entity
+﻿namespace BlazorCrud.Shared.Entity
 {
     public class Adventure
     {
         public int Id{ get; set; }
-     
+
+        public string Title { get; set; }
+
         public int DriverId { get; set; }
 
         public int PassangerId { get; set; }

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TestProject.Shared.Entity;
+using BlazorCrud.Shared.Entity;
 
-namespace TestProject.Shared.Data
+namespace BlazorCrud.Shared.Data
 {
     public class DataContext:DbContext
     {
