@@ -1,0 +1,13 @@
+﻿@inject NavigationManager NavigationManager
+
+
+<button @onclick="EditAdventures" class="btn btn-primary">Edit Adventure</button>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+    void EditAdventures()
+    {
+        NavigationManager.NavigateTo($"/EditAdventures/{Id}");
+    }
+}

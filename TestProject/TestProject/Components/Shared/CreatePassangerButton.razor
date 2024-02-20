@@ -1,0 +1,11 @@
+﻿@inject NavigationManager NavigationManager
+
+
+<button @onclick="CreatePassangers" class="btn btn-primary">Create Passanger</button>
+
+@code {
+    void CreatePassangers()
+    {
+        NavigationManager.NavigateTo("/EditPassangers");
+    }
+}

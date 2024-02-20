@@ -19,11 +19,11 @@ else
       <ul>
           @foreach (var driver in drivers)
         {
-            <li>@driver.FullName<EditGameButton_ Id="driver.Id"/></li>
+            <li>@driver.FullName<EditDriverButton_ Id="driver.Id"/></li>
         }
       </ul>
 }
-<CreateGameButton/>
+<CreateDriverButton/>
 @code {
     List<Driver>? drivers = null;
     protected override async Task OnInitializedAsync()

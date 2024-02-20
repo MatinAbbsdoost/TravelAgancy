@@ -61,5 +61,10 @@ namespace TestProject.Services
             }
             return false;
         }
+
+        public Task<bool> DeletePassanger(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

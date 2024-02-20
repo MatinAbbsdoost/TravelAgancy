@@ -49,5 +49,10 @@ namespace BlazorCrud.Shared.Services
                        .DeleteAsync($"/api/passnager/{id}");
             return await result.Content.ReadFromJsonAsync<bool>();
         }
+
+        public Task<bool> DeletePassanger(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -18,6 +18,8 @@ builder.Services.AddScoped(http => new HttpClient
 });;
 builder.Services.AddDbContext<DataContext>(option => option.UseSqlServer(builder.Configuration.GetConnectionString("MyGamesDbConnection")));
 builder.Services.AddScoped<IDriverServices, DriverServices>();
+builder.Services.AddScoped<IPassnagerServices, PassangerServices>();
+builder.Services.AddScoped<IAdventureServices, AdventureServices>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

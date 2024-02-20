@@ -1,0 +1,11 @@
+﻿@inject NavigationManager NavigationManager
+
+
+<button @onclick="CreateAdventures" class="btn btn-primary">Create Adventure</button>
+
+@code {
+    void CreateAdventures()
+    {
+        NavigationManager.NavigateTo("/EditAdventures");
+    }
+}
